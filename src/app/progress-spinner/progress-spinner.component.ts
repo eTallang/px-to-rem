@@ -2,6 +2,7 @@ import { Component, Input, OnChanges } from '@angular/core';
 
 interface Circle {
   delay: number;
+  duration: number;
 }
 
 @Component({
@@ -16,10 +17,18 @@ export class ProgressSpinnerComponent implements OnChanges {
 
   ngOnChanges() {
     this.circles = [
-      { delay: this.duration },
-      { delay: this.duration / 4 },
-      { delay: this.duration / 2 },
-      { delay: (this.duration / 4) * 3 },
+      this.addCircle(this.duration),
+      this.addCircle(this.duration / 4),
+      this.addCircle(this.duration / 2),
+      this.addCircle((this.duration / 4) * 3)
     ];
+  }
+
+  addCircle(delay: number): Circle {
+    return {
+      delay: delay,
+      duration: this.duration
+      // duration: this.duration + (Math.random() * 1000)
+    };
   }
 }
