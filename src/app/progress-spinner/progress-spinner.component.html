@@ -1,0 +1,12 @@
+<div class="spinner-container" [ngStyle]="{ 'width.px': size, 'height.px': size }">
+  <div
+    *ngFor="let circle of circles"
+    class="circle"
+    [ngStyle]="{
+      'width.px': size / 1.7,
+      'height.px': size / 1.7,
+      'animation-duration.ms': duration,
+      'animation-delay.ms': circle.delay
+    }"
+  ></div>
+</div>
