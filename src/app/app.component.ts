@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  pxValue: string;
+  pxValue = '0';
 
   get remValue(): number {
     if (this.pxValue) {

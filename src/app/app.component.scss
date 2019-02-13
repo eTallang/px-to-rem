@@ -1,3 +1,5 @@
+$input-color: #d30f29;
+
 .page-container {
   width: 100%;
   height: 100%;
@@ -7,31 +9,31 @@
   flex-direction: column;
 
   input {
-    border-radius: 40px;
-    border: 2px solid #2196f3;
+    border: 8px solid $input-color;
+    color: $input-color;
     padding: 20px;
-    margin-top: 40px;
     font-family: 'Courier New', Courier, monospace;
+    background: radial-gradient(circle, $input-color 50%, white 50%);
+    background-position: 150% -10%;
+    background-size: 200% 200%;
     font-size: 2rem;
     width: 200px;
-    
+    border-radius: 9999px;
+
     &::placeholder {
       font-family: 'Courier New', Courier, monospace;
-      color: #2196f3;
+      color: $input-color;
       opacity: 1; /* Firefox */
     }
 
     &:focus {
-      background: linear-gradient(to right, #2196f3, #197aca);
       outline: none;
-      color: white;
-
-      &::placeholder {
-        color: white;
-      }
+      animation: background .3s ease;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
     }
   }
-  
+
   p {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
@@ -40,8 +42,18 @@
   }
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@keyframes background {
+  0% {
+    background-position: 150% -10%;
+  }
+  100% {
+    background-position: 50% 50%;
+    color: white;
+  }
 }
