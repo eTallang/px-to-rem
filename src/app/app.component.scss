@@ -4,4 +4,44 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  input {
+    border-radius: 40px;
+    border: 2px solid #2196f3;
+    padding: 20px;
+    margin-top: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    width: 200px;
+    
+    &::placeholder {
+      font-family: 'Courier New', Courier, monospace;
+      color: #2196f3;
+      opacity: 1; /* Firefox */
+    }
+
+    &:focus {
+      background: linear-gradient(to right, #2196f3, #197aca);
+      outline: none;
+      color: white;
+
+      &::placeholder {
+        color: white;
+      }
+    }
+  }
+  
+  p {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    margin-top: 60px;
+    font-size: 20rem;
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

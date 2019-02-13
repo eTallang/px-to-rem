@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'progress-spinner';
+  pxValue: string;
+
+  get remValue(): number {
+    if (this.pxValue) {
+      return +this.pxValue / 16;
+    }
+  }
 }
