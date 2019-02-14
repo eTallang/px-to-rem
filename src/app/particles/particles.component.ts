@@ -20,7 +20,7 @@ export class ParticlesComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     const viewWidth = this.animationContainer.nativeElement.clientWidth;
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 20; i++) {
       setTimeout(() => {
         this.particles.push({
           horizontalPosition: Math.random() * viewWidth
