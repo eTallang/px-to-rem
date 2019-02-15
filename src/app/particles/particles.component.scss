@@ -7,9 +7,8 @@
 
 .particle {
   position: absolute;
-  border-radius: 999px;
+  border-radius: 4px;
   background-color: #d30f29;
-  box-shadow: 0 0 4px #d30f29;
   animation: wiggle 5s infinite;
 }
 
@@ -20,23 +19,22 @@
     bottom: 0;
   }
 
-  20%, 40%, 60%, 80% {
-    transform: translateX(10px);
-  }
-
-  30%, 50%, 70%, 90% {
-    transform: translateX(-10px);
-  }
-
   10% {
     width: 4px;
     height: 4px;
-    transform: translateX(-10px);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  30%, 50%, 70%, 90% {
+    transform: translate3d(-10px, 0, 0);
   }
 
   to {
     width: 0;
     height: 0;
-    bottom: 700px;
   }
 }

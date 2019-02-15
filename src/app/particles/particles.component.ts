@@ -15,12 +15,14 @@ export class ParticlesComponent implements AfterViewInit {
   @HostBinding('style.position') position = 'absolute';
   @HostBinding('style.z-index') zIndex = '-1';
   @ViewChild('container') animationContainer: ElementRef<HTMLDivElement>;
+  clientHeight: number;
   particles: Particle[] = [];
   constructor() { }
 
   ngAfterViewInit() {
     const viewWidth = this.animationContainer.nativeElement.clientWidth;
-    for (let i = 0; i < 20; i++) {
+    this.clientHeight = this.animationContainer.nativeElement.clientHeight;
+    for (let i = 0; i < 20 ; i++) {
       setTimeout(() => {
         this.particles.push({
           horizontalPosition: Math.random() * viewWidth
