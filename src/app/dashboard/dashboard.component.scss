@@ -6,12 +6,15 @@
   flex-direction: column;
 }
 
-a {
+a, button {
   text-decoration: none;
   font-size: .75rem;
   color: $primary;
   align-self: flex-end;
   padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
 
   &:hover, &:focus {
     color: white;
