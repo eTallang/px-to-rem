@@ -6,9 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  pxValue = '16';
-
-  get remValue(): number {
-    return +this.pxValue / 16;
-  }
 }

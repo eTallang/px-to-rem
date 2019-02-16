@@ -1,10 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ProgressSpinnerModule } from './progress-spinner/progress-spinner.module';
-import { ParticlesModule } from './particles/particles.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,11 +10,8 @@ import { ParticlesModule } from './particles/particles.module';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ProgressSpinnerModule,
-    ParticlesModule
+    AppRoutingModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
