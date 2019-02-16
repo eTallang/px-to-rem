@@ -28,17 +28,10 @@ $input-color: #d30f29;
 
     &:focus {
       outline: none;
-      animation: background .5s ease;
+      animation: background 0.5s ease;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
     }
-  }
-
-  p {
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    margin-top: 60px;
-    font-size: 14rem;
   }
 }
 
@@ -55,5 +48,26 @@ input[type='number']::-webkit-outer-spin-button {
   100% {
     background-position: 50% 50%;
     color: white;
+  }
+}
+
+p {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  margin-top: 60px;
+  font-size: 29vw;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  p {
+    font-size: 18vw;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  p {
+    font-size: 12vw;
   }
 }
