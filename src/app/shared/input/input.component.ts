@@ -1,18 +1,12 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewEncapsulation, HostBinding } from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'input[ptr-input]',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  encapsulation: ViewEncapsulation.None
 })
-export class InputComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class InputComponent {
+  @HostBinding('class.ptr-input') inputClass = true;
 }

@@ -1,6 +1,6 @@
 <a routerLink="login" *ngIf="!user | async">Sign in</a>
 <div class="page-container">
   <app-particles></app-particles>
-  <input placeholder="px" [(ngModel)]="pxValue" type="number" />
+  <input placeholder="px" [(ngModel)]="pxValue" ptr-input type="number" />
   <p>{{ remValue || 0 }}rem</p>
 </div>
