@@ -3,11 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "progress-spinner": {
+    "px-to-rem": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "ptr",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/progress-spinner",
+            "outputPath": "dist/px-to-rem",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "progress-spinner:build"
+            "browserTarget": "px-to-rem:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "progress-spinner:build:production"
+              "browserTarget": "px-to-rem:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "progress-spinner:build"
+            "browserTarget": "px-to-rem:build"
           }
         },
         "test": {
@@ -106,7 +106,7 @@
         }
       }
     },
-    "progress-spinner-e2e": {
+    "px-to-rem-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "progress-spinner:serve"
+            "devServerTarget": "px-to-rem:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "progress-spinner:serve:production"
+              "devServerTarget": "px-to-rem:serve:production"
             }
           }
         },
@@ -135,5 +135,5 @@
       }
     }
   },
-  "defaultProject": "progress-spinner"
+  "defaultProject": "px-to-rem"
 }
