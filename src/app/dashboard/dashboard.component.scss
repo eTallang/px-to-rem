@@ -1,6 +1,27 @@
+@import '../palette';
+
 .page-container {
-  width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  font-size: .75rem;
+  color: $primary;
+  align-self: flex-end;
+  padding: 10px;
+
+  &:hover, &:focus {
+    color: white;
+    background-color: $primary;
+    outline: none;
+  }
+}
+
+.input-container {
+  flex: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +33,6 @@ input {
 }
 
 p {
-  font-family: 'Courier New', Courier, monospace;
   margin: 0;
   margin-top: 60px;
   font-size: 16vw;
