@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'ptr-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss', './shared-styles.scss']
 })
 export class DashboardComponent implements OnInit {
   pxValue = '16';

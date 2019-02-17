@@ -1,26 +1,11 @@
-@import '../palette';
-
 .page-container {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-a, button {
-  text-decoration: none;
-  font-size: .75rem;
-  color: $primary;
+.menu {
   align-self: flex-end;
-  padding: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-
-  &:hover, &:focus {
-    color: white;
-    background-color: $primary;
-    outline: none;
-  }
 }
 
 .input-container {

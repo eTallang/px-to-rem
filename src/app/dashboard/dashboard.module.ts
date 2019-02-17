@@ -6,6 +6,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { ParticlesModule } from '../particles/particles.module';
 import { InputModule } from '../shared';
+import { SettingsModule } from './settings/settings.module';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -14,7 +15,8 @@ import { InputModule } from '../shared';
     DashboardRoutingModule,
     ParticlesModule,
     FormsModule,
-    InputModule
+    InputModule,
+    SettingsModule
   ]
 })
 export class DashboardModule { }

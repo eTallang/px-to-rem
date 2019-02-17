@@ -2,7 +2,10 @@
 <div class="page-container">
   <a routerLink="login" *ngIf="!(user | async); else signOut">Sign in</a>
   <ng-template #signOut>
-    <button (click)="onSignOut()">Sign out</button>
+    <div class="menu">
+      <ptr-settings></ptr-settings>
+      <button (click)="onSignOut()">Sign out</button>
+    </div>
   </ng-template>
   <div class="input-container">
     <input placeholder="px" [(ngModel)]="pxValue" ptr-input type="number" />

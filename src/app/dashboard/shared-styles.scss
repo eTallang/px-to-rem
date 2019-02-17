@@ -1,0 +1,19 @@
+@import '../palette';
+
+a,
+button {
+  text-decoration: none;
+  font-size: 0.75rem;
+  color: $primary;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: white;
+    background-color: $primary;
+    outline: none;
+  }
+}

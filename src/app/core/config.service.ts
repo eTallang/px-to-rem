@@ -3,7 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-interface Settings {
+export interface Settings {
   rootSize: number;
 }
 
@@ -18,7 +18,7 @@ export class ConfigService {
     return this.fireStore.collection('settings').valueChanges().pipe(map(res => res[0] as Settings));
   }
 
-  setRootSize(rootSize: number) {
-    // this.fireStore.
+  setRootSize(rootSize: number): Promise<void> {
+    return this.fireStore.collection('settings').doc('pC9rTKJahYLJz0QKQQZV').update({ rootSize: rootSize });
   }
 }
