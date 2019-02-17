@@ -1,6 +1,10 @@
+@import '~@angular/cdk/text-field'; 
 @import '../../palette';
 
+@include cdk-text-field();
+
 .ptr-input {
+  @include cdk-text-field-autofill-color(transparent, $primary);
   border: 8px solid $primary;
   color: $primary;
   padding: 20px;

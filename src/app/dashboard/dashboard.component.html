@@ -1,12 +1,12 @@
 <app-particles></app-particles>
 <div class="page-container">
-  <a routerLink="login" *ngIf="!(user | async); else signOut">Sign in</a>
-  <ng-template #signOut>
-    <div class="menu">
+  <div class="menu">
+    <a routerLink="login" *ngIf="!(user | async); else signOut">Sign in</a>
+    <ng-template #signOut>
       <ptr-settings></ptr-settings>
       <button (click)="onSignOut()">Sign out</button>
-    </div>
-  </ng-template>
+    </ng-template>
+  </div>
   <div class="input-container">
     <input placeholder="px" [(ngModel)]="pxValue" ptr-input type="number" />
     <p>{{ remValue || 0 }}rem</p>
