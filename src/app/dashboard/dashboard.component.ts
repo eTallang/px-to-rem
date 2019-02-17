@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../core';
+import { AuthService, ConfigService } from '../core';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,20 +10,23 @@ import { Observable } from 'rxjs';
 })
 export class DashboardComponent implements OnInit {
   pxValue = '16';
+  rootSize = 16;
   user: Observable<firebase.User>;
 
   get remValue(): number {
-    return +this.pxValue / 16;
+    return +this.pxValue / this.rootSize;
   }
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private configService: ConfigService) {}
 
   ngOnInit(): void {
     this.user = this.authService.user;
+    this.configService.getRootSize().subscribe(settings => {
+      this.rootSize = settings.rootSize;
+    });
   }
 
   onSignOut(): void {
-    console.log('sign out');
     this.authService.signOut();
   }
 }
