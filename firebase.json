@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/progress-spinner",
+    "public": "dist/px-to-rem",
     "ignore": [
       "firebase.json",
       "**/.*",
