@@ -14,7 +14,7 @@ export class ParticlesComponent implements AfterViewInit {
   @HostBinding('style.height') height = '100%';
   @HostBinding('style.position') position = 'absolute';
   @HostBinding('style.z-index') zIndex = '-1';
-  @ViewChild('container') animationContainer: ElementRef<HTMLDivElement>;
+  @ViewChild('container', { static: true }) animationContainer: ElementRef<HTMLDivElement>;
   clientHeight: number;
   particles: Particle[] = [];
   constructor() { }
