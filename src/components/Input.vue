@@ -1,9 +1,9 @@
 <template>
   <div class="input-container">
-    <div class="border-container">
+    <label class="border-container">
       <input type="number" v-model="model" v-focus />
       <div class="suffix">px</div>
-    </div>
+    </label>
   </div>
 </template>
 
@@ -60,6 +60,7 @@ const vFocus = {
 
 .suffix {
   position: relative;
+  user-select: none;
 }
 
 input {

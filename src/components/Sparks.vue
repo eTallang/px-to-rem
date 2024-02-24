@@ -21,12 +21,13 @@ const render = (timestamp = 0) => {
     lastTimeStamp = timestamp;
     ctx.value.clearRect(0, 0, width.value, height.value);
 
-    sparks.forEach((spark) => spark.reRender());
+    sparks.forEach((spark) => spark.update());
   }
 };
 
 onMounted(() => {
-  sparks = new Array(300)
+  const noOfSparks = Math.round(window.innerWidth / 6);
+  sparks = new Array(noOfSparks)
     .fill(null)
     .map(() => new Spark(ctx.value, Math.random() * width.value));
 

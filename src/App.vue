@@ -22,7 +22,7 @@ const copyRemValue = () => {
   navigator.clipboard.writeText(remValue.value).then(() => {
     showCopiedText.value = true;
 
-    setTimeout(() => (showCopiedText.value = false), 600);
+    setTimeout(() => (showCopiedText.value = false), 800);
   });
 };
 </script>
@@ -61,7 +61,9 @@ button {
 }
 
 .copied-text {
+  color: var(--text-color);
   position: absolute;
+  letter-spacing: 2px;
   bottom: 0;
 }
 

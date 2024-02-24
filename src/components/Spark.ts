@@ -1,7 +1,7 @@
 export class Spark {
   private readonly dir = Math.round(Math.random()) * 2 - 1;
   private readonly hpReducedPerTick = Math.max(0.0015, Math.random() * 0.0025);
-  private hpLeft = 1;
+  private hpLeft = Math.random();
   private size = this.getRandomSize();
   private sinCounter = Math.random() * 2 - 1;
   private maxHeight = this.getRandomMaxHeight();
@@ -10,25 +10,20 @@ export class Spark {
   private color = this.styles.getPropertyValue("--spark-color");
   private glowColor = this.styles.getPropertyValue("--primary-color");
 
-  constructor(private ctx: CanvasRenderingContext2D, private posX: number) {
-    this.hpLeft = Math.random();
-  }
+  constructor(private ctx: CanvasRenderingContext2D, private posX: number) {}
 
-  reRender() {
-    this.updateValues();
-    this.createSpark();
-  }
-
-  updateValues() {
+  update() {
     this.hpLeft = Math.max(0, this.hpLeft - this.hpReducedPerTick);
     this.sinCounter = this.sinCounter + 0.05;
 
     if (this.hpLeft <= 0) {
+      this.hpLeft = 1;
+      this.sinCounter = Math.random() * 2 - 1;
       this.size = this.getRandomSize();
       this.maxHeight = this.getRandomMaxHeight();
-      this.sinCounter = Math.random() * 2 - 1;
-      this.hpLeft = 1;
     }
+
+    this.createSpark();
   }
 
   private getRandomSize() {
