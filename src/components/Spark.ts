@@ -1,4 +1,5 @@
 export class Spark {
+  private dir = Math.round(Math.random()) * 2 - 1;
   private xOrigin = 0;
   private y = 0;
   private dy = 1 + Math.random() * 3;
@@ -23,9 +24,9 @@ export class Spark {
 
   updateValues() {
     this.dx += this.temperature;
-    this.x += Math.sin(this.dx) * 1.4;
+    this.x += Math.sin(this.dx) * 1.4 * this.dir;
     this.y += this.dy;
-    this.radius = this.radius - this.temperature * 0.2;
+    this.radius = this.radius - this.temperature * 0.14;
 
     if (this.radius <= 0) {
       this.radius = this.getRandomRadius();
@@ -36,7 +37,7 @@ export class Spark {
   }
 
   private getRandomRadius() {
-    return 1 + Math.random() * 3;
+    return 1 + Math.random() * 2;
   }
 
   private createSpark() {

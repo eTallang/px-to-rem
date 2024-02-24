@@ -26,7 +26,7 @@ const render = (timestamp = 0) => {
 };
 
 onMounted(() => {
-  sparks = new Array(100)
+  sparks = new Array(200)
     .fill(null)
     .map(() => new Spark(ctx.value, Math.random() * width.value));
 
