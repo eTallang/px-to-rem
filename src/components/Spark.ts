@@ -1,20 +1,17 @@
 export class Spark {
-  private dir = Math.round(Math.random()) * 2 - 1;
-  private xOrigin = 0;
-  private y = 0;
-  private dy = 1 + Math.random() * 3;
-  private temperature = 0.01 + this.dy / 100;
+  private readonly dir = Math.round(Math.random()) * 2 - 1;
+  private readonly hpReducedPerTick = Math.max(0.0015, Math.random() * 0.0025);
+  private hpLeft = 1;
+  private size = this.getRandomSize();
+  private sinCounter = Math.random() * 2 - 1;
+  private maxHeight = this.getRandomMaxHeight();
 
-  private dx = 0;
-  private radius = this.getRandomRadius();
-  private color = "";
-  private glowColor = "";
+  private readonly styles = getComputedStyle(document.documentElement);
+  private color = this.styles.getPropertyValue("--spark-color");
+  private glowColor = this.styles.getPropertyValue("--primary-color");
 
-  constructor(private ctx: CanvasRenderingContext2D, private x: number) {
-    const styles = getComputedStyle(document.documentElement);
-    this.color = styles.getPropertyValue("--spark-color");
-    this.glowColor = styles.getPropertyValue("--primary-color");
-    this.xOrigin = this.x;
+  constructor(private ctx: CanvasRenderingContext2D, private posX: number) {
+    this.hpLeft = Math.random();
   }
 
   reRender() {
@@ -23,26 +20,34 @@ export class Spark {
   }
 
   updateValues() {
-    this.dx += this.temperature;
-    this.x += Math.sin(this.dx) * 1.4 * this.dir;
-    this.y += this.dy;
-    this.radius = this.radius - this.temperature * 0.14;
+    this.hpLeft = Math.max(0, this.hpLeft - this.hpReducedPerTick);
+    this.sinCounter = this.sinCounter + 0.05;
 
-    if (this.radius <= 0) {
-      this.radius = this.getRandomRadius();
-      this.y = 0;
-      this.x = this.xOrigin;
-      this.dx = 0;
+    if (this.hpLeft <= 0) {
+      this.size = this.getRandomSize();
+      this.maxHeight = this.getRandomMaxHeight();
+      this.sinCounter = Math.random() * 2 - 1;
+      this.hpLeft = 1;
     }
   }
 
-  private getRandomRadius() {
+  private getRandomSize() {
     return 1 + Math.random() * 2;
   }
 
+  private getRandomMaxHeight() {
+    const windowHeight = window.innerHeight;
+    return 300 + Math.random() * windowHeight;
+  }
+
   private createSpark() {
+    const calculatedSize = this.size * this.hpLeft;
+    const posY = (1 - this.hpLeft) * this.maxHeight;
+    const xPosWithOffset =
+      this.posX + Math.sin(this.sinCounter) * this.dir * 10 * calculatedSize;
+
     this.ctx.beginPath();
-    this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    this.ctx.arc(xPosWithOffset, posY, calculatedSize, 0, Math.PI * 2);
     this.ctx.closePath();
     this.ctx.fillStyle = this.color;
     this.ctx.fill();

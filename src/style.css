@@ -1,9 +1,9 @@
 :root {
   color-scheme: light dark;
-  --text-color: #fff;
-  --primary-color: #d30f29;
-  --spark-color: #f1586c;
-  background-color: #242424;
+  --text-color: #e0d4d8;
+  --primary-color: #d30f46;
+  --spark-color: #ed8ba2;
+  background-color: #18181f;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -12,7 +12,10 @@
 }
 
 * {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 *:focus {

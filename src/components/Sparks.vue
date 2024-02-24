@@ -12,7 +12,7 @@ const canvasElement = ref<HTMLCanvasElement>();
 const ctx = computed(() => canvasElement.value?.getContext("2d")!);
 let sparks: Spark[] = [];
 let lastTimeStamp = 0;
-const fps = 60;
+const fps = 30;
 
 const render = (timestamp = 0) => {
   window.requestAnimationFrame(render);
@@ -26,13 +26,9 @@ const render = (timestamp = 0) => {
 };
 
 onMounted(() => {
-  sparks = new Array(200)
+  sparks = new Array(300)
     .fill(null)
     .map(() => new Spark(ctx.value, Math.random() * width.value));
-
-  for (let i = 0; i < 200; i++) {
-    sparks.forEach((spark) => spark.updateValues());
-  }
 
   render();
 });

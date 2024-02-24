@@ -37,12 +37,27 @@ const copyRemValue = () => {
 }
 
 button {
-  font-size: max(5.5rem, 10vw);
+  position: relative;
+  font-size: max(5.5rem, 8vw);
   background: transparent;
   border: none;
   color: var(--text-color);
-  font-weight: 500;
   cursor: pointer;
+  padding-inline: 32px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 4px;
+    background-color: var(--text-color);
+    scale: 0 1;
+    transition: scale 400ms ease;
+  }
+
+  &:focus-visible::after {
+    scale: 1 1;
+  }
 }
 
 .copied-text {
