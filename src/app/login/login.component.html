@@ -1,6 +1,0 @@
-<form #loginForm="ngForm" class="login-container" (ngSubmit)="signIn()">
-  <input required type="email" placeholder="username" name="username" ptr-input [(ngModel)]="username">
-  <input required type="password" placeholder="passwd" name="password" ptr-input [(ngModel)]="password">
-  <p [ngClass]="{'visible': errorMessage}">{{errorMessage || ''}}</p>
-  <button [disabled]="loginForm.invalid" [ngClass]="{'error': errorMessage}">Sign in</button>
-</form>

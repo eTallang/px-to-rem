@@ -1,5 +1,5 @@
 {
   "projects": {
-    "px-to-rem": "px-to-rem"
+    "default": "px-to-rem"
   }
 }

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/px-to-rem",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",

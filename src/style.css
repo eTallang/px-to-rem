@@ -1,0 +1,31 @@
+:root {
+  color-scheme: light dark;
+  --text-color: #fff;
+  --primary-color: #d30f29;
+  --spark-color: color-mix(in srgb, var(--primary-color), white 30%);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#app {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
