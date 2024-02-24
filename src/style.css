@@ -2,7 +2,7 @@
   color-scheme: light dark;
   --text-color: #fff;
   --primary-color: #d30f29;
-  --spark-color: color-mix(in srgb, var(--primary-color), white 30%);
+  --spark-color: #f1586c;
   background-color: #242424;
 
   font-synthesis: none;
