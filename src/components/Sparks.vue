@@ -43,5 +43,6 @@ canvas {
   position: fixed;
   z-index: -1;
   rotate: 180deg;
+  inset: 0;
 }
 </style>

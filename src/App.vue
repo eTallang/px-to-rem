@@ -37,7 +37,7 @@ const copyRemValue = () => {
 }
 
 button {
-  font-size: 10rem;
+  font-size: max(5.5rem, 10vw);
   background: transparent;
   border: none;
   color: var(--text-color);
