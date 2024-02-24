@@ -13,10 +13,12 @@
 import { computed, ref } from "vue";
 import Sparks from "./components/Sparks.vue";
 import AppInput from "./components/Input.vue";
+import { useValueDrag } from "./hooks/useValueDrag";
 
 const pxValue = ref(16);
 const remValue = computed(() => `${pxValue.value / 16}rem`);
 const showCopiedText = ref(false);
+useValueDrag((delta) => (pxValue.value = pxValue.value + delta));
 
 const copyRemValue = () => {
   navigator.clipboard.writeText(remValue.value).then(() => {
@@ -44,9 +46,10 @@ button {
   color: var(--text-color);
   cursor: pointer;
   padding-inline: 32px;
+  user-select: none;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: auto 0 0;
     height: 4px;
