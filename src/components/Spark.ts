@@ -27,12 +27,12 @@ export class Spark {
   }
 
   private getRandomSize() {
-    return 1 + Math.random() * 2;
+    return 0.5 + Math.random() * 1.5;
   }
 
   private getRandomMaxHeight() {
     const windowHeight = window.innerHeight;
-    return 300 + Math.random() * windowHeight;
+    return 300 + Math.random() * windowHeight * 1.5;
   }
 
   private createSpark() {
