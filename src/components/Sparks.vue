@@ -19,7 +19,10 @@ const render = (timestamp = 0) => {
 
   if (timestamp - lastTimeStamp > 1000 / fps) {
     lastTimeStamp = timestamp;
+
     ctx.value.clearRect(0, 0, width.value, height.value);
+    // ctx.value.fillStyle = "rgb(24 24 31 / 0.04)";
+    // ctx.value.fillRect(0, 0, width.value, height.value);
 
     sparks.forEach((spark) => spark.update());
   }
