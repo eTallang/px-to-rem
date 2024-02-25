@@ -1,9 +1,18 @@
 :root {
   color-scheme: light dark;
-  --text-color: #e0d4d8;
-  --primary-color: #d30f46;
+  --text-color: #e596b1;
+  --primary-color: #c42552;
   --spark-color: #c84765;
-  background: linear-gradient(#18181f, #21141f);
+  background: radial-gradient(#3c1123, transparent),
+    conic-gradient(
+      #18181f,
+      #21141f,
+      #290b20,
+      #361a1a,
+      #2d1a36,
+      #1d2041,
+      #18181f
+    );
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -12,9 +21,8 @@
 }
 
 * {
-  font-family: "JetBrains Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 400;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 500;
   font-style: normal;
 }
 
