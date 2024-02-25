@@ -38,6 +38,7 @@ button {
   cursor: pointer;
   padding-inline: 32px;
   user-select: none;
+  line-height: 0.7;
 
   &::after {
     content: "";

@@ -49,7 +49,7 @@ const vFocus = {
 
 .border-container {
   color: var(--primary-color);
-  border: 8px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
   padding: 20px;
   font-size: 2rem;
   border-radius: 999px;
@@ -71,7 +71,7 @@ input {
   font-size: inherit;
   text-align: right;
   background: transparent;
-  width: 4em;
+  width: 2em;
 }
 
 /* Chrome, Safari, Edge, Opera */

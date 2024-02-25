@@ -2,6 +2,7 @@
   <sparks />
   <div class="page-content">
     <app-input v-model="pxValue" />
+    <p class="vertical-text">equals</p>
     <rem-button :value="remValue" />
   </div>
 </template>
@@ -23,7 +24,13 @@ useValueDrag((delta) => (pxValue.value = pxValue.value + delta));
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 6vh;
   align-items: center;
+}
+
+.vertical-text {
+  margin-block: 3vh;
+  text-transform: uppercase;
+  color: var(--text-color);
+  user-select: none;
 }
 </style>
