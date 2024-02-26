@@ -6,8 +6,8 @@ export class Spark {
   private sinCounter = Math.random() * 2 - 1;
   private maxHeight = this.getRandomMaxHeight();
 
-  private color = "";
-  private glowColor = "";
+  private color = ''
+  private glowColor = '';
 
   constructor(private ctx: CanvasRenderingContext2D, private posX: number) {
     const styles = getComputedStyle(document.documentElement);

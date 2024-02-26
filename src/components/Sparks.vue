@@ -29,7 +29,7 @@ const render = (timestamp = 0) => {
 };
 
 onMounted(() => {
-  const noOfSparks = Math.round(window.innerWidth / 6);
+  const noOfSparks = Math.round(window.innerWidth / 3);
   sparks = new Array(noOfSparks)
     .fill(null)
     .map(() => new Spark(ctx.value, Math.random() * width.value));
