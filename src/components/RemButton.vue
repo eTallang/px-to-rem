@@ -31,7 +31,7 @@ const copyRemValue = () => {
 button {
   display: grid;
   position: relative;
-  font-size: max(5.5rem, 8vw);
+  font-size: clamp(4.5rem, 8vw, 7.5rem);
   background: transparent;
   border: none;
   color: var(--text-color);
@@ -43,8 +43,8 @@ button {
   &::after {
     content: "";
     position: absolute;
-    inset: auto 0 0;
-    height: 4px;
+    inset: auto 0 -10px;
+    height: 2px;
     background-color: var(--text-color);
     scale: 0 1;
     transition: scale 400ms ease;

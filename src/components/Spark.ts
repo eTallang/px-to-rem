@@ -6,11 +6,14 @@ export class Spark {
   private sinCounter = Math.random() * 2 - 1;
   private maxHeight = this.getRandomMaxHeight();
 
-  private readonly styles = getComputedStyle(document.documentElement);
-  private color = this.styles.getPropertyValue("--spark-color");
-  private glowColor = this.styles.getPropertyValue("--primary-color");
+  private color = "";
+  private glowColor = "";
 
-  constructor(private ctx: CanvasRenderingContext2D, private posX: number) {}
+  constructor(private ctx: CanvasRenderingContext2D, private posX: number) {
+    const styles = getComputedStyle(document.documentElement);
+    this.color = styles.getPropertyValue("--spark-color");
+    this.glowColor = styles.getPropertyValue("--primary-color");
+  }
 
   update() {
     this.hpLeft = Math.max(0, this.hpLeft - this.hpReducedPerTick);

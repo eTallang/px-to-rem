@@ -54,7 +54,7 @@ const vFocus = {
   font-size: 2rem;
   border-radius: 999px;
   display: flex;
-  align-items: baseline;
+  align-items: flex-end;
   transition: color var(--animation-duration) ease;
 }
 
