@@ -64,7 +64,7 @@ button {
   color: var(--text-color);
   position: absolute;
   letter-spacing: 2px;
-  bottom: 0;
+  bottom: -30px;
 }
 
 .fade-in-enter-active,
