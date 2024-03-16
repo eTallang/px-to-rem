@@ -39,5 +39,5 @@ body {
   display: grid;
   place-items: center;
   min-height: 100dvh;
-  cursor: row-resize;
+  cursor: none;
 }
