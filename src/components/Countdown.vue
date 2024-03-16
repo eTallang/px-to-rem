@@ -19,18 +19,18 @@ import { onMounted, onUnmounted, ref } from "vue";
 const minutes = ref(0);
 const seconds = ref(0);
 
-const weddingDate = new Date(2024, 2, 16, 21).getTime();
+const weddingDate = new Date(2024, 2, 16, 20, 28).getTime();
 let intervalId = 0;
 
 const setTimeUntilWedding = () => {
   // get total seconds between the times
-  let delta = Math.abs(weddingDate - Date.now()) / 1000;
+  let delta = (weddingDate - Date.now()) / 1000;
 
   // calculate (and subtract) whole minutes
-  minutes.value = Math.floor(delta / 60) % 60;
+  minutes.value = Math.max(0, Math.floor(delta / 60) % 60);
   delta -= minutes.value * 60;
 
-  seconds.value = Math.floor(delta);
+  seconds.value = Math.max(0, Math.floor(delta));
 };
 
 onMounted(() => {
