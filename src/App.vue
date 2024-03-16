@@ -1,17 +1,15 @@
 <template>
   <sparks />
   <div class="page-content">
-    <app-input v-model="pxValue" />
-    <p class="vertical-text">equals</p>
-    <rem-button :value="remValue" />
+    <p class="vertical-text">streAmen stArteR oM</p>
+    <countdown />
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import Sparks from "./components/Sparks.vue";
-import AppInput from "./components/Input.vue";
-import RemButton from "./components/RemButton.vue";
+import Countdown from "./components/Countdown.vue";
 import { useValueDrag } from "./hooks/useValueDrag";
 
 const pxValue = ref(16);
@@ -29,8 +27,9 @@ useValueDrag((delta) => (pxValue.value = pxValue.value + delta));
 
 .vertical-text {
   margin-block: 3vh;
-  text-transform: uppercase;
   color: var(--text-color);
   user-select: none;
+  letter-spacing: 3px;
+  font-size: 1.5rem;
 }
 </style>
