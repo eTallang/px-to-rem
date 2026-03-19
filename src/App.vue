@@ -1,5 +1,4 @@
 <template>
-  <sparks />
   <div class="page-content">
     <app-input v-model="pxValue" />
     <p class="vertical-text">equals</p>
@@ -9,7 +8,6 @@
 
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import Sparks from "./components/Sparks.vue";
 import AppInput from "./components/Input.vue";
 import RemButton from "./components/RemButton.vue";
 import { useValueDrag } from "./hooks/useValueDrag";
